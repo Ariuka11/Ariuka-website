@@ -1,5 +1,39 @@
 .aboutContainer {
-  background-color: beige;
   width: 100%;
   height: 100vh;
+  background: linear-gradient(
+    90deg,
+    rgba(119, 161, 211, 0.97) 0%,
+    #79cbca 50%,
+    #e684ae 100%
+  );
+  backdrop-filter: blur(50px);
+  display: flex;
+  position: relative;
+  section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+
+    h2 {
+      &::before {
+        position: absolute;
+        content: "";
+        top: 1rem;
+        left: 2rem;
+        border-top: 5px solid black;
+        width: 16rem;
+      }
+    }
+  }
+  .photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  img {
+    width: 20vw;
+  }
 }
