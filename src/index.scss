@@ -1,7 +1,28 @@
 @import "styles/hero.scss";
 @import "styles/navbar.scss";
 @import "styles/about.scss";
+@import "styles/variables";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&family=Press+Start+2P&display=swap");
+@font-face {
+  font-family: "porter_sans_blockblock";
+  src: url("fonts/porter_sans_block/porter-sans-inline-block-webfont.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 
+html {
+  font-size: 56.5%;
+}
+h1 {
+  font-size: 3.5rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
 body {
   margin: 0;
   padding: 0;
@@ -19,5 +40,6 @@ code {
 }
 .App {
   position: relative;
-  background-color: bisque;
+  background-color: $colorBlack;
+  font-family: "Press Start 2P", cursive;
 }
