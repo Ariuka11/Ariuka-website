@@ -1,0 +1,26 @@
+@import "./variables";
+
+.projectContainer {
+  width: 100vw;
+  height: 100vh;
+  background: $colorLinear;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  section {
+    flex: 1;
+    gap: 2rem;
+    padding: 2rem;
+    h2 {
+      font-size: clamp(1rem, 2vw, 3rem);
+      &::before {
+        position: absolute;
+        content: "";
+        top: 1rem;
+        left: 2rem;
+        border-top: 5px solid $colorBlack;
+        width: clamp(5rem, 17vw, 24rem);
+      }
+    }
+  }
+}
