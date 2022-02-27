@@ -7,6 +7,7 @@
   display: flex;
   position: relative;
   flex-direction: column;
+
   section {
     flex: 1;
     gap: 2rem;
@@ -20,6 +21,53 @@
         left: 2rem;
         border-top: 5px solid $colorBlack;
         width: clamp(5rem, 17vw, 24rem);
+      }
+    }
+  }
+  .grid {
+    flex: 8;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    justify-items: center;
+    align-items: center;
+    .card {
+      display: flex;
+      max-width: 80rem;
+      flex-direction: column;
+      background: rgba(255, 255, 255, 0.272);
+      box-shadow: 0 8px 32px 0 rgba(48, 227, 16, 0.334);
+      backdrop-filter: blur(100px);
+      -webkit-backdrop-filter: blur(9px);
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      filter: grayscale(100%);
+      gap: 1rem;
+      img {
+        width: 100%;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }
+      .title {
+        display: flex;
+        gap: 2rem;
+        h3 {
+          flex: 1;
+        }
+      }
+      .button {
+        flex: 1;
+        display: flex;
+        gap: 3rem;
+        justify-content: end;
+        button {
+          padding: 1rem;
+          font-size: 2rem;
+          border: none;
+          background: $colorLinear;
+
+          cursor: pointer;
+        }
       }
     }
   }
