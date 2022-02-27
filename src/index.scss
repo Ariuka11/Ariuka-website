@@ -4,6 +4,8 @@
 @import "styles/variables";
 @import "styles/skills.scss";
 @import "styles/projects.scss";
+@import "styles/contact.scss";
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&family=Press+Start+2P&display=swap");
 @font-face {
   font-family: "porter_sans_blockblock";
@@ -44,4 +46,8 @@ code {
   position: relative;
   background-color: $colorBlack;
   font-family: "Press Start 2P", cursive;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+  scroll-padding-top: 6.5rem;
 }

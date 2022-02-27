@@ -8,6 +8,8 @@
   flex-direction: column;
   color: $colorWhite;
   background: $colorBlack;
+  scroll-snap-align: start;
+
   section {
     flex: 1;
     gap: 2rem;
@@ -20,7 +22,7 @@
         top: 1rem;
         left: 2rem;
         border-top: 5px solid $colorWhite;
-        width: clamp(5rem, 12vrw, 16rem);
+        width: clamp(5rem, 12vw, 19rem);
       }
     }
   }
@@ -62,7 +64,7 @@
       opacity: 0.2;
       cursor: pointer;
       padding: 1rem;
-      background: rgba(255, 255, 255, 0.272);
+      background: rgba(255, 255, 255, 0.492);
       box-shadow: 0 8px 32px 0 rgba(48, 227, 16, 0.334);
       backdrop-filter: blur(100px);
       -webkit-backdrop-filter: blur(9px);

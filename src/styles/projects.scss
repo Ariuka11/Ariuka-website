@@ -1,11 +1,12 @@
 @import "./variables";
 
 .projectContainer {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background: $colorLinear;
   display: flex;
   position: relative;
+  scroll-snap-align: start;
 
   section {
     flex: 1;
@@ -64,13 +65,13 @@
         padding: 0 1rem;
         button {
           font-family: "Open Sans", sans-serif;
-          font-size: 16px;
-          letter-spacing: 2px;
+          font-size: 1.6rem;
+          letter-spacing: 0.2rem;
           text-decoration: none;
           text-transform: uppercase;
           color: #000;
           cursor: pointer;
-          border: 3px solid;
+          border: 0.3rem solid;
           padding: 0.25em 0.5em;
           box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px,
             4px 4px 0px 0px, 5px 5px 0px 0px;
@@ -110,6 +111,8 @@
     .grid {
       display: flex;
       flex-direction: column;
+      button {
+      }
     }
   }
 }

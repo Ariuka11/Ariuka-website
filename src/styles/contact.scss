@@ -1,0 +1,27 @@
+@import "./variables";
+
+.contactContainer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  color: $colorWhite;
+  scroll-snap-align: start;
+
+  section {
+    flex: 1;
+    gap: 2rem;
+    padding: 2rem;
+    h2 {
+      font-size: clamp(1rem, 2vw, 3rem);
+      &::before {
+        position: absolute;
+        content: "";
+        top: 1rem;
+        left: 2rem;
+        border-top: 5px solid $colorWhite;
+        width: clamp(5rem, 17vw, 22rem);
+      }
+    }
+  }
+}

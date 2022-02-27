@@ -10,6 +10,8 @@
   backdrop-filter: blur(50px);
   display: flex;
   position: relative;
+  scroll-snap-align: start;
+
   section {
     flex: 1;
     display: flex;
