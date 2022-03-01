@@ -3,7 +3,6 @@
 .contactContainer {
   width: 100%;
   height: 100vh;
-  display: flex;
   position: relative;
   color: $colorWhite;
   scroll-snap-align: start;
@@ -29,23 +28,33 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    align-items: center;
     h3 {
-      align-items: center;
+      font-size: clamp(1.8rem, 1.3vw, 2.4rem);
     }
     form {
       width: 50vw;
       height: 100%;
-      background-color: rgb(147, 147, 80);
+      background: $colorLinear;
       display: flex;
       gap: 2rem;
-      font-size: 1.6rem;
+      font-size: clamp(1.2rem, 1.5vw, 1.6rem);
       padding: 10rem;
+      color: $colorBlack;
       #contact {
-        font-size: 1.2rem;
-        height: 5rem;
+        font-size: clamp(1.2rem, 1.5vw, 1.8rem);
+        height: 3rem;
+        background: $colorBlack;
+        color: $colorWhite;
+        font-family: Montserrat;
       }
       textarea {
         height: 10rem;
+        font-family: Montserrat;
+        font-weight: 400;
+        font-size: clamp(1.2rem, 1.5vw, 2rem);
+        background: $colorBlack;
+        color: $colorWhite;
       }
       button {
         height: 5rem;
@@ -65,7 +74,7 @@
         -webkit-user-select: none;
         touch-action: manipulation;
         &:hover {
-          opacity: 0.2;
+          transform: scale(1.05);
           transition: all 0.25s ease;
         }
       }

@@ -29,6 +29,11 @@
         width: clamp(5rem, 12vw, 24rem);
       }
     }
+    p {
+      font-family: Montserrat;
+      font-weight: 400;
+      font-size: 2rem;
+    }
   }
   .photo {
     display: flex;

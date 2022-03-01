@@ -27,11 +27,19 @@ const About = () => {
       <section ref={ref}>
         <h2>About Me</h2>
         <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero
-          exercitationem illum cupiditate eaque, voluptatem laborum ullam quia
-          culpa adipisci quod doloribus minima excepturi aperiam nemo magnam
-          sapiente dignissimos doloremque dolores.
+          Hi! My name is <b>Ariunbold Oyungerel.</b> Graduated from{" "}
+          <b>Bloomtech</b> {""}
+          coding school in 2021 after one and a half years long full stack
+          developer program. I genuinly enjoy writing code. Makes me wish I
+          started earlier. I am father of two beautiful daugthers and husband to
+          an one beautiful wife.
         </p>
+        <p>
+          I can create a websign in Figma and Framer. Then I create the website
+          in React. Mainly like to work with Next.js or Vite. I prefer styling
+          with SASS but recently Tailwind seems a better option.
+        </p>
+        <p></p>
       </section>
       <section className="photo">
         <img src={photo} alt="" />
