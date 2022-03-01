@@ -7,7 +7,6 @@
   position: relative;
   color: $colorWhite;
   scroll-snap-align: start;
-
   section {
     flex: 1;
     gap: 2rem;
@@ -21,6 +20,59 @@
         left: 2rem;
         border-top: 5px solid $colorWhite;
         width: clamp(5rem, 17vw, 22rem);
+      }
+    }
+  }
+  main {
+    align-self: center;
+    flex: 5;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    h3 {
+      align-items: center;
+    }
+    form {
+      width: 50vw;
+      height: 100%;
+      background-color: rgb(147, 147, 80);
+      display: flex;
+      gap: 2rem;
+      font-size: 1.6rem;
+      padding: 10rem;
+      #contact {
+        font-size: 1.2rem;
+        height: 5rem;
+      }
+      textarea {
+        height: 10rem;
+      }
+      button {
+        height: 5rem;
+        font-family: "Open Sans", sans-serif;
+        font-size: 1.6rem;
+        letter-spacing: 0.2rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #000;
+        cursor: pointer;
+        border: 0.3rem solid;
+        padding: 0.25em 0.5em;
+        box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px,
+          4px 4px 0px 0px, 5px 5px 0px 0px;
+        position: relative;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        &:hover {
+          opacity: 0.2;
+          transition: all 0.25s ease;
+        }
+      }
+      button:active {
+        box-shadow: 0px 0px 0px 0px;
+        top: 5px;
+        left: 5px;
       }
     }
   }

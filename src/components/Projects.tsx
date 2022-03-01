@@ -1,9 +1,30 @@
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+
 const Projects = () => {
+  const { ref, inView } = useInView();
+  const animation = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      animation.start({
+        x: 0,
+        transition: {
+          type: "spring",
+          duration: 1,
+          bounce: 0.3,
+        },
+      });
+    } else {
+      animation.start({ x: "-100vw" });
+    }
+  }, [inView]);
   return (
-    <div className="projectContainer">
-      <section>
+    <div ref={ref} className="projectContainer">
+      <motion.section animate={animation}>
         <h2>Projects</h2>
-      </section>
+      </motion.section>
       <section className="grid">
         <div className="card">
           <img
@@ -11,7 +32,7 @@ const Projects = () => {
             alt=""
           />
           <div className="title">
-            <h3>Disney Plus Clone</h3>
+            <h3>Disny Plusss Clone</h3>
             <div className="button">
               <button>Github</button>
               <button>Live demo</button>

@@ -1,5 +1,6 @@
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
+
 const Skills = () => {
   return (
     <div className="skillsContainer">
