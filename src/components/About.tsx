@@ -1,30 +1,43 @@
 import { motion, useAnimation } from "framer-motion";
-import { useEffect } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 import photo from "../images/austin-wade-X6Uj51n5CE8-unsplash.jpg";
 
 const About = () => {
-  const { ref, inView } = useInView();
-  const animation = useAnimation();
+  const ref = useRef();
+  const [inViewRef, inView2] = useInView();
 
+  // Use `useCallback` so we don't recreate the function on each render - Could result in infinite loop
+  const setRefs = useCallback(
+    (node) => {
+      // Ref's from useRef needs to have the node assigned to `current`
+      ref.current = node;
+      // Callback refs, like the one from `useInView`, is a function that takes the node as an argument
+      inViewRef(node);
+    },
+    [inViewRef],
+  );
+  const animation1 = useAnimation();
+  
   useEffect(() => {
-    if (inView) {
-      animation.start({
+    if (inView2) {
+      animation1.start({
         x: 0,
         transition: {
           type: "spring",
-          duration: 1,
+          duration: 2,
           bounce: 0.3,
         },
       });
     } else {
-      animation.start({ x: "-100vw" });
+      animation1.start({ x: "-100vw" });
     }
-  }, [inView]);
+ 
+  }, [inView2]);
 
   return (
-    <motion.div className="aboutContainer">
-      <section ref={ref}>
+    <motion.div ref={setRefs} className="aboutContainer">
+      <motion.section  animate={animation1}>
         <h2>About Me</h2>
         <p>
           Hi! I am <b>Ariunbold Oyungerel.</b> Graduated from{" "}
@@ -40,7 +53,7 @@ const About = () => {
           with <b>SASS</b>  but recently Tailwind seems a better option.
         </p>
         <p></p>
-      </section>
+      </motion.section>
       <section className="photo">
         <img src={photo} alt="" />
       </section>

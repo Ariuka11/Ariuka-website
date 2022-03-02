@@ -1,9 +1,42 @@
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useCallback, useEffect, useRef } from "react";
+import { useInView } from "react-intersection-observer";
 
 const Svg = () => {
+  const ref = useRef();
+  const [inViewRef, inView2] = useInView();
+
+  // Use `useCallback` so we don't recreate the function on each render - Could result in infinite loop
+  const setRefs = useCallback(
+    (node) => {
+      // Ref's from useRef needs to have the node assigned to `current`
+      ref.current = node;
+      // Callback refs, like the one from `useInView`, is a function that takes the node as an argument
+      inViewRef(node);
+    },
+    [inViewRef],
+  );
+  const animation1 = useAnimation();
+  
+  useEffect(() => {
+    if (inView2) {
+      animation1.start({
+        x: 0,
+        transition: {
+          type: "spring",
+          duration: 2,
+          bounce: 0.3,
+        
+        },
+      });
+    } else {
+      animation1.start({ x: "-100vw" });
+    }
+ 
+  }, [inView2]);
   return (
-    <section className="gridSkill">
-      <motion.svg
+    <motion.section ref={setRefs} className="gridSkill">
+      <motion.svg  animate={animation1}
         className="logo tall-wide"
         xmlns="http:ß//www.w3.org/2000/svg"
         aria-hidden="true"
@@ -16,7 +49,7 @@ const Svg = () => {
         <path fill="#f5de19" d="M2 2h28v28H2z" />
         <path d="M20.809 23.875a2.866 2.866 0 0 0 2.6 1.6c1.09 0 1.787-.545 1.787-1.3c0-.9-.716-1.222-1.916-1.747l-.658-.282c-1.9-.809-3.16-1.822-3.16-3.964c0-1.973 1.5-3.476 3.853-3.476a3.889 3.889 0 0 1 3.742 2.107L25 18.128A1.789 1.789 0 0 0 23.311 17a1.145 1.145 0 0 0-1.259 1.128c0 .789.489 1.109 1.618 1.6l.658.282c2.236.959 3.5 1.936 3.5 4.133c0 2.369-1.861 3.667-4.36 3.667a5.055 5.055 0 0 1-4.795-2.691Zm-9.295.228c.413.733.789 1.353 1.693 1.353c.864 0 1.41-.338 1.41-1.653v-8.947h2.631v8.982c0 2.724-1.6 3.964-3.929 3.964a4.085 4.085 0 0 1-3.947-2.4Z" />
       </motion.svg>
-      <motion.svg
+      <motion.svg animate={animation1}
         className="logo tall-wide"
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
@@ -39,7 +72,7 @@ const Svg = () => {
           d="M21.677 28.456c-1.355 0-3.076-.82-4.868-2.361a28.756 28.756 0 0 1-5.747-7.237a28.676 28.676 0 0 1-3.374-8.471a11.376 11.376 0 0 1-.158-4A3.391 3.391 0 0 1 8.964 3.9c1.487-.861 4.01.024 6.585 2.31a28.8 28.8 0 0 1 5.39 6.934a28.384 28.384 0 0 1 3.41 8.287a11.3 11.3 0 0 1 .137 4.146a3.543 3.543 0 0 1-1.494 2.555a2.59 2.59 0 0 1-1.315.324Zm-9.58-10.2a27.949 27.949 0 0 0 5.492 6.929c2.249 1.935 4.033 2.351 4.8 1.9c.8-.465 1.39-2.363.782-5.434A27.212 27.212 0 0 0 19.9 13.74a27.6 27.6 0 0 0-5.145-6.64c-2.424-2.152-4.39-2.633-5.191-2.169a2.327 2.327 0 0 0-.855 1.662a10.194 10.194 0 0 0 .153 3.565a27.465 27.465 0 0 0 3.236 8.1Z"
         />
       </motion.svg>
-      <motion.svg
+      <motion.svg animate={animation1} custom = {0}
         className="logo"
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
@@ -67,7 +100,7 @@ const Svg = () => {
           d="M127.89 220.573h39.327l-3.708 41.42l-35.62 9.614v33.226l65.473-18.145l.48-5.396l7.506-84.08l.779-8.576H127.89v31.937Zm0-64.719v.078h77.143l.64-7.178l1.456-16.191l.763-8.568H127.89v31.86Z"
         />
       </motion.svg>
-      <motion.svg
+      <motion.svg animate={animation1}
         className="logo"
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
@@ -95,7 +128,7 @@ const Svg = () => {
           d="m202.127 188.636l5.765-64.641H127.89v31.937h45.002l-2.906 32.704H127.89v31.937h39.327l-3.708 41.42l-35.62 9.614v33.226l65.473-18.145l.48-5.396l7.506-84.08l.779-8.576Z"
         />
       </motion.svg>
-      <motion.svg
+      <motion.svg animate={animation1}
         className="logo wide"
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
@@ -113,11 +146,11 @@ const Svg = () => {
             y1="17.487%"
             y2="89.755%"
           >
-            <stop offset="0%" stop-color="#41873F" />
-            <stop offset="32.88%" stop-color="#418B3D" />
-            <stop offset="63.52%" stop-color="#419637" />
-            <stop offset="93.19%" stop-color="#3FA92D" />
-            <stop offset="100%" stop-color="#3FAE2A" />
+            <stop offset="0%" stopColor="#41873F" />
+            <stop offset="32.88%" stopColor="#418B3D" />
+            <stop offset="63.52%" stopColor="#419637" />
+            <stop offset="93.19%" stopColor="#3FA92D" />
+            <stop offset="100%" stopColor="#3FAE2A" />
           </linearGradient>
           <linearGradient
             id="svgIDd"
@@ -126,10 +159,10 @@ const Svg = () => {
             y1="55.169%"
             y2="-18.306%"
           >
-            <stop offset="13.76%" stop-color="#41873F" />
-            <stop offset="40.32%" stop-color="#54A044" />
-            <stop offset="71.36%" stop-color="#66B848" />
-            <stop offset="90.81%" stop-color="#6CC04A" />
+            <stop offset="13.76%" stopColor="#41873F" />
+            <stop offset="40.32%" stopColor="#54A044" />
+            <stop offset="71.36%" stopColor="#66B848" />
+            <stop offset="90.81%" stopColor="#6CC04A" />
           </linearGradient>
           <linearGradient
             id="svgIDe"
@@ -138,10 +171,10 @@ const Svg = () => {
             y1="13.43%"
             y2="13.43%"
           >
-            <stop offset="9.192%" stop-color="#6CC04A" />
-            <stop offset="28.64%" stop-color="#66B848" />
-            <stop offset="59.68%" stop-color="#54A044" />
-            <stop offset="86.24%" stop-color="#41873F" />
+            <stop offset="9.192%" stopColor="#6CC04A" />
+            <stop offset="28.64%" stopColor="#66B848" />
+            <stop offset="59.68%" stopColor="#54A044" />
+            <stop offset="86.24%" stopColor="#41873F" />
           </linearGradient>
           <linearGradient
             id="svgIDf"
@@ -150,10 +183,10 @@ const Svg = () => {
             y1="49.997%"
             y2="49.997%"
           >
-            <stop offset="9.192%" stop-color="#6CC04A" />
-            <stop offset="28.64%" stop-color="#66B848" />
-            <stop offset="59.68%" stop-color="#54A044" />
-            <stop offset="86.24%" stop-color="#41873F" />
+            <stop offset="9.192%" stopColor="#6CC04A" />
+            <stop offset="28.64%" stopColor="#66B848" />
+            <stop offset="59.68%" stopColor="#54A044" />
+            <stop offset="86.24%" stopColor="#41873F" />
           </linearGradient>
           <linearGradient
             id="svgIDg"
@@ -162,10 +195,10 @@ const Svg = () => {
             y1="36.21%"
             y2="36.21%"
           >
-            <stop offset="9.192%" stop-color="#6CC04A" />
-            <stop offset="28.64%" stop-color="#66B848" />
-            <stop offset="59.68%" stop-color="#54A044" />
-            <stop offset="86.24%" stop-color="#41873F" />
+            <stop offset="9.192%" stopColor="#6CC04A" />
+            <stop offset="28.64%" stopColor="#66B848" />
+            <stop offset="59.68%" stopColor="#54A044" />
+            <stop offset="86.24%" stopColor="#41873F" />
           </linearGradient>
           <linearGradient
             id="svgIDh"
@@ -174,10 +207,10 @@ const Svg = () => {
             y1="50.275%"
             y2="50.275%"
           >
-            <stop offset="9.192%" stop-color="#6CC04A" />
-            <stop offset="28.64%" stop-color="#66B848" />
-            <stop offset="59.68%" stop-color="#54A044" />
-            <stop offset="86.24%" stop-color="#41873F" />
+            <stop offset="9.192%" stopColor="#6CC04A" />
+            <stop offset="28.64%" stopColor="#66B848" />
+            <stop offset="59.68%" stopColor="#54A044" />
+            <stop offset="86.24%" stopColor="#41873F" />
           </linearGradient>
           <linearGradient
             id="svgIDi"
@@ -186,11 +219,11 @@ const Svg = () => {
             y1="-211.069%"
             y2="201.605%"
           >
-            <stop offset="0%" stop-color="#41873F" />
-            <stop offset="32.88%" stop-color="#418B3D" />
-            <stop offset="63.52%" stop-color="#419637" />
-            <stop offset="93.19%" stop-color="#3FA92D" />
-            <stop offset="100%" stop-color="#3FAE2A" />
+            <stop offset="0%" stopColor="#41873F" />
+            <stop offset="32.88%" stopColor="#418B3D" />
+            <stop offset="63.52%" stopColor="#419637" />
+            <stop offset="93.19%" stopColor="#3FA92D" />
+            <stop offset="100%" stopColor="#3FAE2A" />
           </linearGradient>
           <path
             id="svgIDa"
@@ -226,31 +259,31 @@ const Svg = () => {
               <path d="M109.797 91.305V35.019c0-2.08-1.271-4.045-3.12-5.085L57.786 1.85a5.106 5.106 0 0 0-1.848-.693l53.511 91.42c.231-.347.347-.809.347-1.271ZM3.12 29.934C1.272 30.974 0 32.94 0 35.02v56.286c0 2.08 1.387 4.045 3.12 5.085l48.889 28.085c1.156.693 2.427.925 3.814.693L3.467 29.818l-.346.116Z" />
               <path
                 fill="url(#svgIDe)"
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="m50.391.809l-.693.347h.924l-.231-.347Z"
                 transform="translate(0 -9.246)"
               />
               <path
                 fill="url(#svgIDf)"
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M106.792 105.636c1.387-.809 2.427-2.196 2.89-3.698L56.053 10.402c-1.387-.231-2.89-.116-4.16.693L3.351 39.065l52.355 95.465a8.057 8.057 0 0 0 2.196-.693l48.889-28.2Z"
                 transform="translate(0 -9.246)"
               />
               <path
                 fill="url(#svgIDg)"
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="m111.3 104.712l-.347-.578v.809l.346-.231Z"
                 transform="translate(0 -9.246)"
               />
               <path
                 fill="url(#svgIDh)"
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="m106.792 105.636l-48.773 28.085a6.973 6.973 0 0 1-2.196.693l.925 1.734l54.089-31.32v-.694l-1.387-2.312c-.231 1.618-1.271 3.005-2.658 3.814Z"
                 transform="translate(0 -9.246)"
               />
               <path
                 fill="url(#svgIDi)"
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="m106.792 105.636l-48.773 28.085a6.973 6.973 0 0 1-2.196.693l.925 1.734l54.089-31.32v-.694l-1.387-2.312c-.231 1.618-1.271 3.005-2.658 3.814Z"
                 transform="translate(0 -9.246)"
               />
@@ -268,7 +301,7 @@ const Svg = () => {
         preserveAspectRatio="xMidYMid meet"
         viewBox="0 0 512 146"
       >
-        <g fill="none" fill-rule="evenodd">
+        <g fill="none" fillRule="evenodd">
           <path
             fill="#8E714E"
             d="M476.713 60.463c-.46.092-.922 1.107-.922 1.66c-.092 3.692-.184 13.474-.184 20.118c0 .185.276.554.553.554c1.384.092 4.706.184 7.567.184c3.968 0 6.275-.553 7.568-1.106c3.321-1.662 4.89-5.261 4.89-9.23c0-8.95-6.275-12.365-15.596-12.365c-.646-.092-2.49-.092-3.876.185Zm23.81 41.25c0-9.136-6.737-14.212-18.918-14.212c-.554 0-4.43-.092-5.353.092c-.277.093-.645.278-.645.555c0 6.551-.093 16.98.184 21.04c.184 1.753 1.477 4.245 3.046 4.983c1.66.923 5.444 1.107 8.028 1.107c7.29 0 13.658-4.06 13.658-13.565Zm-42.634-46.325c.922 0 3.69.276 10.796.276c6.737 0 12.089-.184 18.641-.184c8.028 0 19.102 2.86 19.102 14.857c0 5.906-4.153 10.613-9.597 12.92c-.276.092-.276.276 0 .368c7.751 1.939 14.581 6.737 14.581 15.78c0 8.86-5.537 14.489-13.566 17.996c-4.891 2.122-10.981 2.86-17.164 2.86c-4.707 0-17.349-.553-24.362-.368c-.738-.278.646-3.6 1.291-4.153c1.662-.093 2.953-.185 4.707-.739c2.492-.645 2.768-1.384 3.137-5.167c.185-3.23.185-14.674.185-22.794c0-11.166.093-18.733 0-22.424c-.092-2.86-1.107-3.784-3.137-4.338c-1.57-.276-4.153-.646-6.276-.922c-.462-.462 1.107-3.6 1.662-3.968Zm-53.248 57.399c2.216 1.752 6.553 2.49 10.429 2.49c4.983 0 9.966-.921 14.765-5.26c4.891-4.428 8.305-11.257 8.305-22.146c0-10.429-3.968-18.919-12.089-23.901c-4.614-2.862-10.52-4.06-17.349-4.06c-2.03 0-3.968.092-5.167.645c-.278.185-.923 1.015-.923 1.476c-.185 1.846-.185 16.057-.185 24.363c0 8.582 0 20.579.185 21.963c0 1.385.645 3.507 2.03 4.43Zm-20.948-57.4c1.754 0 8.49.277 11.72.277c5.815 0 9.967-.276 20.948-.276c9.228 0 16.98 2.491 22.517 7.197c6.736 5.814 10.244 13.843 10.244 23.624c0 13.935-6.368 21.964-12.736 26.578c-6.366 4.706-14.672 7.474-26.484 7.474c-6.275 0-17.072-.184-26.024-.277h-.092c-.461-.83.738-4.06 1.476-4.152c2.4-.277 3.046-.37 4.246-.83c1.937-.739 2.307-1.754 2.584-5.168c.276-6.368.184-14.027.184-22.702c0-6.182.092-18.272-.093-22.148c-.276-3.229-1.66-4.06-4.429-4.614c-1.384-.276-3.23-.646-5.813-.922c-.37-.647 1.291-3.507 1.752-4.06Z"
@@ -352,8 +385,8 @@ const Svg = () => {
             y1="32%"
             y2="67.556%"
           >
-            <stop offset="0%" stop-color="#2298BD" />
-            <stop offset="100%" stop-color="#0ED7B5" />
+            <stop offset="0%" stopColor="#2298BD" />
+            <stop offset="100%" stopColor="#0ED7B5" />
           </linearGradient>
         </defs>
         <path
@@ -456,8 +489,8 @@ const Svg = () => {
             y1="7.652%"
             y2="78.411%"
           >
-            <stop offset="0%" stop-color="#41D1FF" />
-            <stop offset="100%" stop-color="#BD34FE" />
+            <stop offset="0%" stopColor="#41D1FF" />
+            <stop offset="100%" stopColor="#BD34FE" />
           </linearGradient>
           <linearGradient
             id="svgIDb"
@@ -466,9 +499,9 @@ const Svg = () => {
             y1="2.242%"
             y2="89.03%"
           >
-            <stop offset="0%" stop-color="#FFEA83" />
-            <stop offset="8.333%" stop-color="#FFDD35" />
-            <stop offset="100%" stop-color="#FFA800" />
+            <stop offset="0%" stopColor="#FFEA83" />
+            <stop offset="8.333%" stopColor="#FFDD35" />
+            <stop offset="100%" stopColor="#FFA800" />
           </linearGradient>
         </defs>
         <path
@@ -498,8 +531,8 @@ const Svg = () => {
             y1="12.039%"
             y2="78.201%"
           >
-            <stop offset="0%" stop-color="#387EB8" />
-            <stop offset="100%" stop-color="#366994" />
+            <stop offset="0%" stopColor="#387EB8" />
+            <stop offset="100%" stopColor="#366994" />
           </linearGradient>
           <linearGradient
             id="svgIDb"
@@ -508,8 +541,8 @@ const Svg = () => {
             y1="20.579%"
             y2="88.429%"
           >
-            <stop offset="0%" stop-color="#FFE052" />
-            <stop offset="100%" stop-color="#FFC331" />
+            <stop offset="0%" stopColor="#FFE052" />
+            <stop offset="100%" stopColor="#FFC331" />
           </linearGradient>
         </defs>
         <path
@@ -551,7 +584,7 @@ const Svg = () => {
           d="M250.716 70.497c-5.765-4-18.976-5.5-29.304-3.5c-1.2-10-6.725-18.749-16.333-26.499l-5.524-4l-3.844 5.75c-4.803 7.5-7.205 18-6.485 28c.24 3.499 1.441 9.749 5.044 15.249c-3.362 2-10.328 4.5-19.455 4.5H1.155l-.48 2c-1.682 9.999-1.682 41.248 18.014 65.247c14.892 18.249 36.99 27.499 66.053 27.499c62.93 0 109.528-30.25 131.386-84.997c8.647.25 27.142 0 36.51-18.75c.24-.5.72-1.5 2.401-5.249l.961-2l-5.284-3.25ZM139.986 0h-26.42v24.999h26.42V0Zm0 29.999h-26.42v24.999h26.42v-25Zm-31.225 0h-26.42v24.999h26.42v-25Zm-31.225 0H51.115v24.999h26.421v-25ZM46.311 59.998H19.89v24.999h26.42v-25Zm31.225 0H51.115v24.999h26.421v-25Zm31.225 0h-26.42v24.999h26.42v-25Zm31.226 0h-26.422v24.999h26.422v-25Zm31.225 0H144.79v24.999h26.422v-25Z"
         />
       </motion.svg>
-    </section>
+    </motion.section>
   );
 };
 

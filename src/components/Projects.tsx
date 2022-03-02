@@ -1,10 +1,25 @@
 import { motion, useAnimation } from "framer-motion";
 import trello from "../images/Screen Shot 2022-03-01 at 12.47.42 PM.png";
-import { useEffect } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 
 const Projects = () => {
-  const { ref, inView } = useInView();
+  const ref = useRef();
+  const [inViewRef, inView] = useInView({
+    threshold: 0.5
+  });
+
+  // Use `useCallback` so we don't recreate the function on each render - Could result in infinite loop
+  const setRefs = useCallback(
+    (node) => {
+      // Ref's from useRef needs to have the node assigned to `current`
+      ref.current = node;
+      // Callback refs, like the one from `useInView`, is a function that takes the node as an argument
+      inViewRef(node);
+    },
+    [inViewRef],
+  );
+
   const animation = useAnimation();
 
   useEffect(() => {
@@ -21,8 +36,9 @@ const Projects = () => {
       animation.start({ x: "-100vw" });
     }
   }, [inView]);
+
   return (
-    <motion.div  ref={ref} className="projectContainer">
+    <motion.div ref={setRefs} className="projectContainer">
       <motion.section animate={animation}>
         <h2>Projects</h2>
       </motion.section>
@@ -39,7 +55,7 @@ const Projects = () => {
               <button>Live demo</button>
             </div>
           </motion.div>
-          <motion.p initial ={{x: "-100vw"}} animate={{x: 0}} className="para">
+          <motion.p animate={animation} className="para">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem
             laboriosam ipsa ullam praesentium dolor labore expedita modi,
             nostrum magnam iusto facilis sapiente quasi consequatur itaque

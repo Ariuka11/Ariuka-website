@@ -48,7 +48,7 @@ code {
   position: relative;
   background-color: $colorBlack;
   font-family: "Press Start 2P", cursive;
-  scroll-snap-type: y mandatory;
+  // scroll-snap-type: y proximity;
   overflow-y: scroll;
   height: 100vh;
   scroll-padding-top: 6.5rem;
