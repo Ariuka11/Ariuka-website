@@ -1,19 +1,18 @@
-import { Icon } from "@iconify/react";
-import { motion } from "framer-motion";
+import Svg from "./Svg";
 
 const Skills = () => {
   return (
     <div className="skillsContainer">
       <section>
-        <h2>Skills</h2>
+        <h2>Skills</h2>ß
       </section>
-      <motion.section className="gridSkill">
+      <Svg />
+      {/* <motion.section className="gridSkill">
         <Icon
           icon="logos:javascript"
           width={"100%"}
           className="logo tall-wide"
         />
-        <span className="text"> I know this very well</span>
         <Icon icon="logos:react" width={"100%"} className="logo tall-wide" />
         <Icon icon="logos:html-5" width={"100%"} className="logo" />
         <Icon icon="logos:css-3" width={"100%"} className="logo" />
@@ -36,7 +35,7 @@ const Skills = () => {
         <Icon icon="logos:python" width={"100%"} className="logo wide" />
         <Icon icon="simple-icons:threedotjs" width={"100%"} className="logo" />
         <Icon icon="logos:docker-icon" width={"100%"} className="logo" />
-      </motion.section>
+      </motion.section> */}
     </div>
   );
 };
