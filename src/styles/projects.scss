@@ -5,11 +5,11 @@
   height: 100vh;
   background: $colorLinear;
   display: flex;
+  flex-direction: column;
   position: relative;
   scroll-snap-align: start;
 
   section {
-    flex: 1;
     gap: 2rem;
     padding: 2rem;
     h2 {
@@ -25,15 +25,16 @@
     }
   }
   .grid {
-    flex: 6;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25vw, 1fr));
-
+    grid-template-columns: repeat(auto-fit, minmax(10vw, 25vw));
+    grid-auto-rows: max-content;
+    place-content: center;
+    
     .card {
-      padding: 2rem;
+      padding: 1rem;
       display: flex;
-      max-width: 75rem;
-      max-height: 52rem;
+      // max-width: 75rem;
+      // max-height: 52rem;
       flex-direction: column;
       background: rgba(255, 255, 255, 0.3);
       box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -43,6 +44,20 @@
       overflow: hidden;
       // filter: grayscale(100%);
       gap: 1rem;
+      &:hover > .para {
+        display: block;
+        -webkit-animation: fadeIn 1s;
+        animation: fadeIn 2s;
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+       
+      }
       img {
         width: 100%;
         border-radius: 5px;
@@ -58,19 +73,20 @@
       .button {
         flex: 1;
         display: flex;
-        gap: 3rem;
+        gap: clamp(1rem, 2vw, 3rem);
         justify-content: end;
         padding: 0 1rem;
         button {
           font-family: "Open Sans", sans-serif;
-          font-size: 1.6rem;
+          font-size: clamp(1rem, 2vw, 1.6rem);
           letter-spacing: 0.2rem;
           text-decoration: none;
           text-transform: uppercase;
           color: #000;
           cursor: pointer;
           border: 0.3rem solid;
-          padding: 0.25em 0.5em;
+          padding: 0.25rem 0.5rem;
+          border-radius: 0.5rem;
           box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px,
             4px 4px 0px 0px, 5px 5px 0px 0px;
           position: relative;
@@ -88,30 +104,25 @@
           top: 5px;
           left: 5px;
         }
-
-        @media (min-width: 768px) {
-          button {
-            padding: 0.25em 0.75em;
-          }
-        }
       }
-      p {
-        font-family: Poppins;
+      .para {
+    
+        display:none;
+        font-family: Fredoka;
         padding: 0 1rem;
-        font-size: 1.4rem;
+        font-size: clamp(1.6rem, 2vw, 2rem)
       }
+     
     }
   }
   @media only screen and (max-width: 990px) {
-    section {
-      max-width: 30%;
-    }
+    
     .grid {
-      display: flex;
-      flex-direction: column;
-      .card {
-        min-width: 350px;
-      }
+      display: grid;
+      grid-template-columns: auto auto;
+    }
+    .button {
+      gap: 1rem;
     }
   }
 }

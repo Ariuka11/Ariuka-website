@@ -30,9 +30,9 @@
       }
     }
     p {
-      font-family: Montserrat;
-      font-weight: 400;
-      font-size: 2rem;
+      font-family: Fredoka;
+      font-weight: lighter;
+      font-size:clamp(2rem, 2vw, 3rem)
     }
   }
   .photo {

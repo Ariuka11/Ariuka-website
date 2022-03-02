@@ -4,7 +4,7 @@ const Skills = () => {
   return (
     <div className="skillsContainer">
       <section>
-        <h2>Skills</h2>ß
+        <h2>Skills</h2>
       </section>
       <Svg />
       {/* <motion.section className="gridSkill">

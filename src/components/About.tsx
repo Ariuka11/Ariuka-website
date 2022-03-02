@@ -27,7 +27,7 @@ const About = () => {
       <section ref={ref}>
         <h2>About Me</h2>
         <p>
-          Hi! My name is <b>Ariunbold Oyungerel.</b> Graduated from{" "}
+          Hi! I am <b>Ariunbold Oyungerel.</b> Graduated from{" "}
           <b>Bloomtech</b> {""}
           coding school in 2021 after one and a half years long full stack
           developer program. I genuinly enjoy writing code. Makes me wish I
@@ -35,9 +35,9 @@ const About = () => {
           an one beautiful wife.
         </p>
         <p>
-          I can create a websign in Figma and Framer. Then I create the website
-          in React. Mainly like to work with Next.js or Vite. I prefer styling
-          with SASS but recently Tailwind seems a better option.
+          I can create a websign in <b>Figma</b>  and Framer. Then I create the website
+          in <b>React</b>. Mainly like to work with Next.js or Vite. I prefer styling
+          with <b>SASS</b>  but recently Tailwind seems a better option.
         </p>
         <p></p>
       </section>
