@@ -45,7 +45,7 @@ const Projects = () => {
       <motion.section className="grid">
         <motion.div className="card">
           <motion.img
-            src="https://images.unsplash.com/photo-1645906321292-07a671e6deb6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=700&q=60"
+            src="https://i.ibb.co/qrGPx46/Screen-Shot-2022-03-02-at-11-19-01-PM.png"
             alt=""
           />
           <motion.div className="title">
@@ -64,7 +64,7 @@ const Projects = () => {
         </motion.div>
         <motion.div className="card">
           <img
-            src="https://images.unsplash.com/photo-1645906321292-07a671e6deb6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=700&q=60"
+            src="https://i.ibb.co/phccN7R/Screen-Shot-2022-03-02-at-11-22-36-PM.png"
             alt=""
           />
           <div className="title">
@@ -82,7 +82,10 @@ const Projects = () => {
           </p>
         </motion.div>
         <div className="card">
-          <img src={trello} alt="" />
+          <img
+            src="https://i.ibb.co/kMh8Ndn/Screen-Shot-2022-03-01-at-12-47-42-PM.png"
+            alt=""
+          />
           <div className="title">
             <h3>Trello Clone</h3>
             <div className="button">
