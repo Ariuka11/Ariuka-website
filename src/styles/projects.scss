@@ -41,19 +41,7 @@
 
       // filter: grayscale(100%);
       gap: 1rem;
-      &:hover > .para {
-        display: block;
-        -webkit-animation: fadeIn 1s;
-        animation: fadeIn 2s;
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
-        }
-      }
+
       img {
         width: 100%;
         border-radius: 5px;
