@@ -14,10 +14,10 @@ const Svg = () => {
       // Callback refs, like the one from `useInView`, is a function that takes the node as an argument
       inViewRef(node);
     },
-    [inViewRef],
+    [inViewRef]
   );
   const animation1 = useAnimation();
-  
+
   useEffect(() => {
     if (inView2) {
       animation1.start({
@@ -26,17 +26,16 @@ const Svg = () => {
           type: "spring",
           duration: 2,
           bounce: 0.3,
-        
         },
       });
     } else {
       animation1.start({ x: "-100vw" });
     }
- 
   }, [inView2]);
   return (
     <motion.section ref={setRefs} className="gridSkill">
-      <motion.svg  animate={animation1}
+      <motion.svg
+        animate={animation1}
         className="logo tall-wide"
         xmlns="http:ß//www.w3.org/2000/svg"
         aria-hidden="true"
@@ -44,12 +43,12 @@ const Svg = () => {
         height="1em"
         preserveAspectRatio="xMidYMid meet"
         viewBox="0 0 32 32"
-      
       >
         <path fill="#f5de19" d="M2 2h28v28H2z" />
         <path d="M20.809 23.875a2.866 2.866 0 0 0 2.6 1.6c1.09 0 1.787-.545 1.787-1.3c0-.9-.716-1.222-1.916-1.747l-.658-.282c-1.9-.809-3.16-1.822-3.16-3.964c0-1.973 1.5-3.476 3.853-3.476a3.889 3.889 0 0 1 3.742 2.107L25 18.128A1.789 1.789 0 0 0 23.311 17a1.145 1.145 0 0 0-1.259 1.128c0 .789.489 1.109 1.618 1.6l.658.282c2.236.959 3.5 1.936 3.5 4.133c0 2.369-1.861 3.667-4.36 3.667a5.055 5.055 0 0 1-4.795-2.691Zm-9.295.228c.413.733.789 1.353 1.693 1.353c.864 0 1.41-.338 1.41-1.653v-8.947h2.631v8.982c0 2.724-1.6 3.964-3.929 3.964a4.085 4.085 0 0 1-3.947-2.4Z" />
       </motion.svg>
-      <motion.svg animate={animation1}
+      <motion.svg
+        animate={animation1}
         className="logo tall-wide"
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
@@ -72,7 +71,9 @@ const Svg = () => {
           d="M21.677 28.456c-1.355 0-3.076-.82-4.868-2.361a28.756 28.756 0 0 1-5.747-7.237a28.676 28.676 0 0 1-3.374-8.471a11.376 11.376 0 0 1-.158-4A3.391 3.391 0 0 1 8.964 3.9c1.487-.861 4.01.024 6.585 2.31a28.8 28.8 0 0 1 5.39 6.934a28.384 28.384 0 0 1 3.41 8.287a11.3 11.3 0 0 1 .137 4.146a3.543 3.543 0 0 1-1.494 2.555a2.59 2.59 0 0 1-1.315.324Zm-9.58-10.2a27.949 27.949 0 0 0 5.492 6.929c2.249 1.935 4.033 2.351 4.8 1.9c.8-.465 1.39-2.363.782-5.434A27.212 27.212 0 0 0 19.9 13.74a27.6 27.6 0 0 0-5.145-6.64c-2.424-2.152-4.39-2.633-5.191-2.169a2.327 2.327 0 0 0-.855 1.662a10.194 10.194 0 0 0 .153 3.565a27.465 27.465 0 0 0 3.236 8.1Z"
         />
       </motion.svg>
-      <motion.svg animate={animation1} custom = {0}
+      <motion.svg
+        animate={animation1}
+        custom={0}
         className="logo"
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
@@ -100,7 +101,8 @@ const Svg = () => {
           d="M127.89 220.573h39.327l-3.708 41.42l-35.62 9.614v33.226l65.473-18.145l.48-5.396l7.506-84.08l.779-8.576H127.89v31.937Zm0-64.719v.078h77.143l.64-7.178l1.456-16.191l.763-8.568H127.89v31.86Z"
         />
       </motion.svg>
-      <motion.svg animate={animation1}
+      <motion.svg
+        animate={animation1}
         className="logo"
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
@@ -128,7 +130,8 @@ const Svg = () => {
           d="m202.127 188.636l5.765-64.641H127.89v31.937h45.002l-2.906 32.704H127.89v31.937h39.327l-3.708 41.42l-35.62 9.614v33.226l65.473-18.145l.48-5.396l7.506-84.08l.779-8.576Z"
         />
       </motion.svg>
-      <motion.svg animate={animation1}
+      <motion.svg
+        animate={animation1}
         className="logo wide"
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
