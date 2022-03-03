@@ -37,6 +37,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 code {
@@ -48,6 +49,4 @@ code {
   background-color: $colorBlack;
   font-family: "Press Start 2P", cursive;
   scroll-padding-top: 6.5rem;
-
-  width: 100vw;
 }
