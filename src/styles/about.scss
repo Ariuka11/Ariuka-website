@@ -39,9 +39,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 10px;
   }
   img {
     padding: 1rem;
-    width: clamp(180px, 25vw, 450px);
+    width: clamp(30rem, 50vw, 60rem);
+    border-radius: 5rem;
+  }
+}
+
+@media (max-width: 750px) {
+  .aboutContainer {
+    flex-direction: column;
+    section {
+      flex: 0;
+    }
   }
 }

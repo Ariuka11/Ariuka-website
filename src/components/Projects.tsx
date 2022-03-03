@@ -23,7 +23,7 @@ const Projects = () => {
   useEffect(() => {
     if (inView) {
       animation.start({
-        x: 0,
+        x: "0px",
         transition: {
           type: "spring",
           duration: 1,
@@ -47,7 +47,7 @@ const Projects = () => {
             alt=""
           />
           <motion.div className="title">
-            <h3>Disny Plus Clone</h3>
+            <h3>Disney Plus Clone</h3>
             <div className="button">
               <button>Github</button>
               <button>Live demo</button>

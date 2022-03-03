@@ -1,7 +1,7 @@
 import { motion, useAnimation } from "framer-motion";
 import { useCallback, useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
-import photo from "../images/austin-wade-X6Uj51n5CE8-unsplash.jpg";
+import photo from "../images/ariuka.jpeg";
 
 const About = () => {
   const ref = useRef();
@@ -54,7 +54,7 @@ const About = () => {
         <p></p>
       </motion.section>
       <section className="photo">
-        <img src={photo} alt="" />
+        <img src={photo} alt="ariuka's portrait" />
       </section>
     </motion.div>
   );
