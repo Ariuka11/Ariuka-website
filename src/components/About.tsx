@@ -15,10 +15,10 @@ const About = () => {
       // Callback refs, like the one from `useInView`, is a function that takes the node as an argument
       inViewRef(node);
     },
-    [inViewRef],
+    [inViewRef]
   );
   const animation1 = useAnimation();
-  
+
   useEffect(() => {
     if (inView2) {
       animation1.start({
@@ -30,17 +30,15 @@ const About = () => {
         },
       });
     } else {
-      animation1.start({ x: "-100vw" });
     }
- 
   }, [inView2]);
 
   return (
     <motion.div ref={setRefs} className="aboutContainer">
-      <motion.section  animate={animation1}>
+      <motion.section animate={animation1}>
         <h2>About Me</h2>
         <p>
-          Hi! I am <b>Ariunbold Oyungerel.</b> Graduated from{" "}
+          {""}Hi! I am <b>Ariunbold Oyungerel.</b> Graduated from{" "}
           <b>Bloomtech</b> {""}
           coding school in 2021 after one and a half years long full stack
           developer program. I genuinly enjoy writing code. Makes me wish I
@@ -48,9 +46,10 @@ const About = () => {
           an one beautiful wife.
         </p>
         <p>
-          I can create a websign in <b>Figma</b>  and Framer. Then I create the website
-          in <b>React</b>. Mainly like to work with Next.js or Vite. I prefer styling
-          with <b>SASS</b>  but recently Tailwind seems a better option.
+          {""}I can create a websign in <b>Figma</b> and Framer. Then I create
+          the website in <b>React</b>. Mainly like to work with Next.js or Vite.
+          I prefer styling with <b>SASS</b> but recently Tailwind seems a better
+          option.
         </p>
         <p></p>
       </motion.section>
