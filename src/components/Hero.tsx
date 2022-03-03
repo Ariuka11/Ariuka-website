@@ -28,7 +28,7 @@ const me = {
 
 const Hero = () => {
   return (
-    <div className="heroContainer">
+    <div className="heroContainer" id="hero">
       <main>
         <section>
           <motion.h1 variants={project} initial="begin" animate="start">

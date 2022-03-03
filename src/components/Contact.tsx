@@ -35,7 +35,7 @@ const Contact = () => {
     }
   }, [inView2]);
   return (
-    <motion.div id="about" ref={setRefs} className="contactContainer">
+    <motion.div id="contact" ref={setRefs} className="contactContainer">
       <motion.section animate={animation1}>
         <h2>Contact</h2>
       </motion.section>

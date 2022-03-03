@@ -39,14 +39,14 @@
       grid-row: span 2;
       &:hover {
         transform: scale(1.1);
-        transition: all 0.5s ease-in-out;
+        transition: all 0.25s ease-in-out;
       }
     }
     .wide {
       grid-column: span 2 / auto;
       &:hover {
         transform: scale(1.1);
-        transition: all 0.5s ease-in-out;
+        transition: all 0.25s ease-in-out;
       }
     }
     .tall-wide {
@@ -54,7 +54,7 @@
       grid-column: span 2 / auto;
       &:hover {
         transform: scale(1.1);
-        transition: all 0.5s ease;
+        transition: all 0.25s ease-in;
       }
     }
     .text {

@@ -21,9 +21,13 @@
       font-family: "porter_sans_blockblock", cursive;
       font-size: clamp(1.5rem, 3vw, 4rem);
     }
-    h3 {
+    a {
+      text-decoration: none;
       font-family: "Press Start 2P", cursive;
       font-size: clamp(0.5rem, 1.75vw, 2rem);
+      &:visited {
+        color: $colorWhite;
+      }
     }
     section {
       flex: 1;

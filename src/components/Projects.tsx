@@ -36,7 +36,7 @@ const Projects = () => {
   }, [inView]);
 
   return (
-    <motion.div ref={setRefs} className="projectContainer">
+    <motion.div id="projects" ref={setRefs} className="projectContainer">
       <motion.section animate={animation}>
         <h2>Projects</h2>
       </motion.section>
