@@ -5,9 +5,7 @@ import { useInView } from "react-intersection-observer";
 
 const Projects = () => {
   const ref = useRef();
-  const [inViewRef, inView] = useInView({
-    threshold: 0.5,
-  });
+  const [inViewRef, inView] = useInView();
 
   // Use `useCallback` so we don't recreate the function on each render - Could result in infinite loop
   const setRefs = useCallback(
