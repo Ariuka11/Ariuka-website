@@ -26,18 +26,13 @@
     gap: 5rem;
     align-items: center;
     justify-content: center;
-    
+
     h3 {
-      background: linear-gradient(
-          90deg,
-          #af4bb3 0%,
-          #79cbca 50%,
-          #db5c93 100%
-        );
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        -webkit-text-stroke: 0.1px black;
+      background: linear-gradient(90deg, #af4bb3 0%, #79cbca 50%, #db5c93 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 0.1px black;
       font-size: clamp(2rem, 1.3vw, 2.8rem);
     }
     form {
@@ -50,7 +45,7 @@
       padding: 5rem;
       color: $colorBlack;
       border-radius: 1rem;
- 
+
       #contact {
         font-size: clamp(1.2rem, 1.5vw, 1.8rem);
         height: 3rem;
@@ -100,11 +95,11 @@
     }
   }
   .logoContainer {
-
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: clamp(5rem, 3vw, 50rem);
-    .logo{
+    grid-auto-rows: clamp(5rem, 3vw, 25rem);
+    width: clamp(30rem, 30vw, 50%);
+    .logo {
       width: 100%;
       height: 100%;
       margin: 1rem;
