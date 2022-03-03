@@ -53,12 +53,12 @@ const Projects = () => {
               <button>Live demo</button>
             </div>
           </motion.div>
-          <motion.p animate={animation} className="para">
+          <p className="para">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem
             laboriosam ipsa ullam praesentium dolor labore expedita modi,
             nostrum magnam iusto facilis sapiente quasi consequatur itaque
             dolores, odit accusantium, rerum libero.
-          </motion.p>
+          </p>
         </motion.div>
         <motion.div className="card">
           <img
