@@ -6,9 +6,8 @@
 @import "styles/projects.scss";
 @import "styles/contact.scss";
 
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500&family=Shizuru&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500&family=Shizuru&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&family=Press+Start+2P&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Martel:wght@300;400;600;700&family=Montserrat:wght@200;300;400;500;600;700&display=swap");
 @font-face {
   font-family: "porter_sans_blockblock";
   src: url("fonts/porter_sans_block/porter-sans-inline-block-webfont.woff")
@@ -49,7 +48,7 @@ code {
   background-color: $colorBlack;
   font-family: "Press Start 2P", cursive;
   // scroll-snap-type: y proximity;
-  overflow-y: scroll;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
   scroll-padding-top: 6.5rem;
 }
