@@ -49,8 +49,12 @@ const Projects = () => {
           <motion.div className="title">
             <h3>Disney Plus Clone</h3>
             <div className="button">
-              <button>Github</button>
-              <button>Live demo</button>
+              <button onClick={() => window.open("http://google.com")}>
+                Github
+              </button>
+              <button onClick={() => window.open("http://google.com")}>
+                Live demo
+              </button>
             </div>
           </motion.div>
           <p className="para">
@@ -68,8 +72,12 @@ const Projects = () => {
           <div className="title">
             <h3>E-commerce Web</h3>
             <div className="button">
-              <button>Github</button>
-              <button>Live demo</button>
+              <button onClick={() => window.open("http://google.com")}>
+                Github
+              </button>
+              <button onClick={() => window.open("http://google.com")}>
+                Live demo
+              </button>
             </div>
           </div>
           <p className="para">
@@ -87,8 +95,12 @@ const Projects = () => {
           <div className="title">
             <h3>Trello Clone</h3>
             <div className="button">
-              <button>Github</button>
-              <button>Live demo</button>
+              <button onClick={() => window.open("http://google.com")}>
+                Github
+              </button>
+              <button onClick={() => window.open("http://google.com")}>
+                Live demo
+              </button>
             </div>
           </div>
           <p className="para">
@@ -106,8 +118,12 @@ const Projects = () => {
           <div className="title">
             <h3>E-commerce Admin panel</h3>
             <div className="button">
-              <button>Github</button>
-              <button>Live demo</button>
+              <button onClick={() => window.open("http://google.com")}>
+                Github
+              </button>
+              <button onClick={() => window.open("http://google.com")}>
+                Live demo
+              </button>
             </div>
           </div>
           <p className="para">
