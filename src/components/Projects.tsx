@@ -49,10 +49,18 @@ const Projects = () => {
           <motion.div className="title">
             <h3>Disney Plus Clone</h3>
             <div className="button">
-              <button onClick={() => window.open("http://google.com")}>
+              <button
+                onClick={() =>
+                  window.open("https://github.com/Ariuka11/DisneyPlus-Clone")
+                }
+              >
                 Github
               </button>
-              <button onClick={() => window.open("http://google.com")}>
+              <button
+                onClick={() =>
+                  window.open("https://disneyplus12-clone.netlify.app")
+                }
+              >
                 Live demo
               </button>
             </div>
@@ -72,10 +80,18 @@ const Projects = () => {
           <div className="title">
             <h3>E-commerce Web</h3>
             <div className="button">
-              <button onClick={() => window.open("http://google.com")}>
+              <button
+                onClick={() =>
+                  window.open("https://github.com/Ariuka11/E-commerce")
+                }
+              >
                 Github
               </button>
-              <button onClick={() => window.open("http://google.com")}>
+              <button
+                onClick={() =>
+                  window.open("https://ariuka-e-commerce.netlify.app")
+                }
+              >
                 Live demo
               </button>
             </div>
@@ -95,10 +111,18 @@ const Projects = () => {
           <div className="title">
             <h3>Trello Clone</h3>
             <div className="button">
-              <button onClick={() => window.open("http://google.com")}>
+              <button
+                onClick={() =>
+                  window.open("https://github.com/Ariuka11/Trello-Clone")
+                }
+              >
                 Github
               </button>
-              <button onClick={() => window.open("http://google.com")}>
+              <button
+                onClick={() =>
+                  window.open("https://trello-clone12.netlify.app")
+                }
+              >
                 Live demo
               </button>
             </div>
@@ -118,10 +142,18 @@ const Projects = () => {
           <div className="title">
             <h3>E-commerce Admin panel</h3>
             <div className="button">
-              <button onClick={() => window.open("http://google.com")}>
+              <button
+                onClick={() =>
+                  window.open("https://github.com/Ariuka11/Admin-Page")
+                }
+              >
                 Github
               </button>
-              <button onClick={() => window.open("http://google.com")}>
+              <button
+                onClick={() =>
+                  window.open("https://ecommerce-admin-page.netlify.app")
+                }
+              >
                 Live demo
               </button>
             </div>
