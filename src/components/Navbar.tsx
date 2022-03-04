@@ -5,7 +5,14 @@ const Navbar = () => {
     <div className="navContainer">
       <main>
         <h1>
-          <Link to="hero" spy={true} smooth={true} offset={-55} duration={500}>
+          <Link
+            className="ariuka"
+            to="hero"
+            spy={true}
+            smooth={true}
+            offset={-55}
+            duration={500}
+          >
             Ariuka.
           </Link>
         </h1>
