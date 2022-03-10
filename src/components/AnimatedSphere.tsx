@@ -6,7 +6,7 @@ const AnimatedSphere = () => {
       <MeshDistortMaterial
         color="#8352fd"
         distort={0.5}
-        speed={1.5}
+        speed={1.2}
         roughness={0}
       />
     </Sphere>
