@@ -15,9 +15,20 @@
   font-weight: normal;
   font-style: normal;
 }
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 html {
   font-size: 56.5%;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h2 {
@@ -27,16 +38,8 @@ h3 {
   font-size: 1.5rem;
 }
 body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  width: 100vw;
+  width: 100%;
+  min-height: 100vh;
 }
 
 code {
@@ -48,7 +51,4 @@ code {
   background-color: $colorBlack;
   font-family: "Press Start 2P", cursive;
   scroll-padding-top: 6.5rem;
-  width: 100vw;
-  min-height: 100vh;
-  overflow-x: hidden;
 }
